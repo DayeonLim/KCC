@@ -217,7 +217,8 @@
   .team-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
   @media (max-width:680px){ .team-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:420px){ .team-grid{ grid-template-columns:1fr; } }
-  .member.board-photo-card .m-photo{ flex:1; }
+  .member.board-photo-card{ min-height:0; }
+  .member.board-photo-card .m-photo{ aspect-ratio:758/570; }
   .member.board-photo-card .m-photo img{ object-fit:contain; background:var(--white); }
   .team-grid .member{ display:flex; flex-direction:column; min-height:260px; }
   .team-grid .member .m-body{ flex:1; display:flex; flex-direction:column; justify-content:center; }
