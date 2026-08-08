@@ -214,24 +214,9 @@
   .advisor-card h3{ margin:8px 0 2px; color:var(--purple); font-size:1.3rem; }
   .advisor-card .role{ color:var(--pink); font-weight:700; }
 
-  .team-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
-  @media (max-width:680px){ .team-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:420px){ .team-grid{ grid-template-columns:1fr; } }
-  .team-grid .member{ display:flex; flex-direction:column; min-height:260px; }
-  .team-grid .member .m-body{ flex:1; display:flex; flex-direction:column; justify-content:center; }
-  .team-grid .member.board-photo-card{ min-height:0; max-width:220px; margin:0 auto; width:100%; display:block; }
-  .member.board-photo-card .m-photo{ aspect-ratio:758/570; }
-  .member.board-photo-card .m-photo img{ object-fit:contain; background:var(--white); }
+  .team-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:26px; }
   .member{ padding:0 0 24px; overflow:hidden; text-align:center; }
-  .m-photo{
-    aspect-ratio:1/1; width:100%;
-    background:linear-gradient(135deg,var(--pink-soft),var(--purple-soft));
-    display:flex; align-items:center; justify-content:center;
-    overflow:hidden;
-  }
-  .m-photo img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
-  .m-photo .ph-emoji{ font-size:2.8rem; color:var(--ink-soft); }
-  .m-body{ padding:20px 20px 0; }
+  .m-body{ padding:28px 24px 0; }
   .m-body h3{ margin:0; font-size:1.3rem; color:var(--purple); }
   .m-role{ display:inline-block; background:var(--pink-soft); color:var(--ink); font-weight:700; font-size:.82rem; padding:4px 14px; border-radius:999px; margin:8px 0 6px; }
   .m-grade{ font-family:var(--f-script); color:var(--purple); font-size:1rem; margin:0 0 12px; }
@@ -575,14 +560,17 @@
       <span class="role">Club Advisors</span>
     </div>
 
+    <!-- Group photo placeholder -->
+    <div class="card g-card" style="max-width:640px; margin:0 auto 40px;">
+      <div class="g-photo" style="aspect-ratio:16/7;">
+        <img src="images/board.jpg" alt="Board">
+      </div>
+    </div>
+
     <div class="team-grid">
 
-      <div class="card member board-photo-card">
-        <div class="m-photo"><img src="images/board.jpg" alt="KCC Board" onerror="this.parentElement.innerHTML='<span class=&quot;ph-emoji&quot;>📸</span>';"></div>
-      </div>
-
       <div class="card member">
-        <div class="m-body" style="padding-top:28px;">
+        <div class="m-body">
           <h3>Dayeon Lim</h3>
           <span class="m-role">Co-founder &amp; Director</span>
           <p class="m-grade">🎓 Senior</p>
@@ -590,7 +578,7 @@
       </div>
 
       <div class="card member">
-        <div class="m-body" style="padding-top:28px;">
+        <div class="m-body">
           <h3>Iris Hong</h3>
           <span class="m-role">Co-founder &amp; Treasurer</span>
           <p class="m-grade">🎓 Senior</p>
@@ -598,7 +586,7 @@
       </div>
 
       <div class="card member">
-        <div class="m-body" style="padding-top:28px;">
+        <div class="m-body">
           <h3>Sally Lee</h3>
           <span class="m-role">Public Relations</span>
           <p class="m-grade">🎓 Senior</p>
@@ -606,7 +594,7 @@
       </div>
 
       <div class="card member">
-        <div class="m-body" style="padding-top:28px;">
+        <div class="m-body">
           <h3>Valerie Loo</h3>
           <span class="m-role">Officer</span>
           <p class="m-grade">🎓 Senior</p>
@@ -614,7 +602,7 @@
       </div>
 
       <div class="card member">
-        <div class="m-body" style="padding-top:28px;">
+        <div class="m-body">
           <h3>Audrey Wang</h3>
           <span class="m-role">Officer</span>
           <p class="m-grade">🎓 Senior</p>
