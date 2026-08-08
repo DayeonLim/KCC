@@ -217,7 +217,9 @@
   .team-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
   @media (max-width:680px){ .team-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:420px){ .team-grid{ grid-template-columns:1fr; } }
-  .member.board-photo-card .m-photo{ aspect-ratio:1/1; }
+  .member.board-photo-card .m-photo{ aspect-ratio:auto; flex:1; }
+  .team-grid .member{ display:flex; flex-direction:column; min-height:260px; }
+  .team-grid .member .m-body{ flex:1; display:flex; flex-direction:column; justify-content:center; }
   .member{ padding:0 0 24px; overflow:hidden; text-align:center; }
   .m-photo{
     aspect-ratio:1/1; width:100%;
@@ -574,17 +576,11 @@
     <div class="team-grid">
 
       <div class="card member board-photo-card">
-        <div class="m-photo"><img src="images/board.jpg" alt="KCC Board" onerror="this.parentElement.innerHTML='<span class=&quot;ph-emoji&quot;>📸</span>';"></div>
-        <div class="m-body">
-          <h3>The Board</h3>
-          <span class="m-role">2025 – 2026</span>
-          <p class="m-grade">📷</p>
-        </div>
+        <div class="m-photo"><img src="images/board.jpg" alt="KCC Board">
       </div>
 
       <div class="card member">
-        <div class="m-photo"><img src="images/dayeon.jpg" alt="Dayeon Lim" onerror="this.parentElement.innerHTML='<span class=&quot;ph-emoji&quot;>🌸</span>';"></div>
-        <div class="m-body">
+        <div class="m-body" style="padding-top:28px;">
           <h3>Dayeon Lim</h3>
           <span class="m-role">Co-founder &amp; Director</span>
           <p class="m-grade">🎓 Senior</p>
@@ -592,8 +588,7 @@
       </div>
 
       <div class="card member">
-        <div class="m-photo"><img src="images/iris.jpg" alt="Iris Hong" onerror="this.parentElement.innerHTML='<span class=&quot;ph-emoji&quot;>🌸</span>';"></div>
-        <div class="m-body">
+        <div class="m-body" style="padding-top:28px;">
           <h3>Iris Hong</h3>
           <span class="m-role">Co-founder &amp; Treasurer</span>
           <p class="m-grade">🎓 Senior</p>
@@ -601,8 +596,7 @@
       </div>
 
       <div class="card member">
-        <div class="m-photo"><img src="images/sally.jpg" alt="Sally Lee" onerror="this.parentElement.innerHTML='<span class=&quot;ph-emoji&quot;>🌸</span>';"></div>
-        <div class="m-body">
+        <div class="m-body" style="padding-top:28px;">
           <h3>Sally Lee</h3>
           <span class="m-role">Public Relations</span>
           <p class="m-grade">🎓 Senior</p>
@@ -610,8 +604,7 @@
       </div>
 
       <div class="card member">
-        <div class="m-photo"><img src="images/valerie.jpg" alt="Valerie Loo" onerror="this.parentElement.innerHTML='<span class=&quot;ph-emoji&quot;>🌸</span>';"></div>
-        <div class="m-body">
+        <div class="m-body" style="padding-top:28px;">
           <h3>Valerie Loo</h3>
           <span class="m-role">Officer</span>
           <p class="m-grade">🎓 Senior</p>
@@ -619,8 +612,7 @@
       </div>
 
       <div class="card member">
-        <div class="m-photo"><img src="images/audrey.jpg" alt="Audrey Wang" onerror="this.parentElement.innerHTML='<span class=&quot;ph-emoji&quot;>🌸</span>';"></div>
-        <div class="m-body">
+        <div class="m-body" style="padding-top:28px;">
           <h3>Audrey Wang</h3>
           <span class="m-role">Officer</span>
           <p class="m-grade">🎓 Senior</p>
