@@ -214,9 +214,10 @@
   .advisor-card h3{ margin:8px 0 2px; color:var(--purple); font-size:1.3rem; }
   .advisor-card .role{ color:var(--pink); font-weight:700; }
 
-  .team-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:26px; }
-  .member{ padding:0 0 24px; overflow:hidden; text-align:center; }
-  .m-body{ padding:28px 24px 0; }
+  .team-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:26px; grid-auto-rows:1fr; }
+  .member{ padding:0; overflow:hidden; text-align:center; display:flex; flex-direction:column; min-height:280px; }
+  .member .m-body{ padding:28px 24px; flex:1; display:flex; flex-direction:column; justify-content:center; }
+  .member .g-photo{ flex:1; aspect-ratio:auto; min-height:0; }
   .m-body h3{ margin:0; font-size:1.3rem; color:var(--purple); }
   .m-role{ display:inline-block; background:var(--pink-soft); color:var(--ink); font-weight:700; font-size:.82rem; padding:4px 14px; border-radius:999px; margin:8px 0 6px; }
   .m-grade{ font-family:var(--f-script); color:var(--purple); font-size:1rem; margin:0 0 12px; }
@@ -565,8 +566,6 @@
       <div class="card member">
         <div class="g-photo">
           <img src="images/board.jpg" alt="KCC Board">
-        </div>
-        <div class="m-body" style="padding-top:16px;">
         </div>
       </div>
       
