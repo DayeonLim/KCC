@@ -196,8 +196,9 @@
     background:linear-gradient(135deg,var(--pink-soft),var(--purple-soft));
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     color:var(--ink-soft); text-align:center; padding:14px; gap:6px;
+    overflow:hidden;
   }
-  .g-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .g-photo img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
   .g-photo .ph-emoji{ font-size:2.4rem; }
   .g-photo .ph-text{ font-size:.85rem; font-weight:600; }
   .g-body{ padding:16px 20px 20px; }
@@ -474,7 +475,9 @@
     <div class="gallery">
 
       <div class="card g-card">
-        <img src="images/westgate-2026.jpg" alt="Westgate 2026">
+        <div class="g-photo">
+          <img src="images/westgate-2026.jpg" alt="Westgate 2026">
+        </div>
         <div class="g-body">
           <span class="g-date">Feb 15, 2026</span>
           <h3>Fashion + "Famous" @ Westgate Center</h3>
