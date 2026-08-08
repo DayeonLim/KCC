@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TKA Korean Culture Club ♡ KCC</title>
+<meta name="description" content="The Kings Academy Korean Culture Club — for middle & high schoolers who love Korean culture and K-pop! Meetings every Friday in M2 (Dance Room)." />
+
+<!-- Cute rounded fonts (matching the Sunnyvale K-Pop Dance Night page) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=DynaPuff:wght@400;500;600;700&family=Titan+One&display=swap" rel="stylesheet" />
+
+<!-- Korean flag favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇰🇷</text></svg>" />
+
+<style>
+  :root{
+    --f-display:"Titan One",system-ui;
+    --f-body:"Anybody",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --f-script:"DynaPuff",cursive;
+    /* muted, aesthetic Korean palette — dusty taegeuk red + slate blue, hanji white, soft black */
+    --pink:        #bd6a6a;   /* muted taegeuk red — primary accent */
+    --pink-soft:   #ecdad6;   /* soft dusty rose */
+    --pink-bg:     #f8f5f0;   /* warm hanji white (page bg) */
+    --purple:      #506d97;   /* muted taegeuk blue — secondary accent */
+    --purple-soft: #dae0ea;   /* soft slate blue */
+    --sky:         #6d8ab0;   /* dusty blue */
+    --sky-soft:    #e0e6ef;   /* pale blue */
+    --cream:       #f5f1e9;
+    --ink:         #2c2a2b;   /* soft black — text */
+    --ink-soft:    #837b78;   /* muted warm grey */
+    --white:       #fdfbf7;   /* soft white */
+    --yellow:      #bd6a6a;   /* red accent (stars) */
+    --shadow:      0 12px 30px rgba(80,60,60,.15);
+    --shadow-sm:   0 6px 16px rgba(80,60,60,.11);
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    font-family:var(--f-body);
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 12% 8%, var(--pink-soft) 0, transparent 40%),
+      radial-gradient(circle at 88% 20%, var(--purple-soft) 0, transparent 42%),
+      radial-gradient(circle at 70% 90%, var(--sky-soft) 0, transparent 45%),
+      var(--pink-bg);
+    background-attachment:fixed;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3{ font-family:var(--f-display); font-weight:400; letter-spacing:.5px; }
+  a{ color:var(--purple); }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 22px; }
+
+  section{ padding:70px 0; position:relative; }
+
+  .section-title{
+    text-align:center;
+    font-size:2.2rem;
+    color:var(--pink);
+    margin:0 0 8px;
+    text-shadow:2px 2px 0 var(--white);
+  }
+  .section-sub{
+    text-align:center;
+    font-family:var(--f-script);
+    color:var(--ink-soft);
+    margin:0 auto 46px;
+    max-width:640px;
+    font-size:1.15rem;
+  }
+
+  /* floating decorations */
+  .floaty{ position:absolute; font-size:2rem; opacity:.55; animation:bob 6s ease-in-out infinite; pointer-events:none; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0) rotate(-6deg);} 50%{ transform:translateY(-16px) rotate(6deg);} }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:2px dashed var(--pink-soft);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:12px 22px; max-width:1080px; margin:0 auto; flex-wrap:wrap; gap:8px; }
+  .brand{ font-family:var(--f-display); font-size:1.35rem; color:var(--pink); display:flex; align-items:center; gap:8px; }
+  .nav-links{ display:flex; gap:6px; flex-wrap:wrap; }
+  .nav-links a{
+    text-decoration:none; color:var(--ink);
+    font-weight:600; font-size:.95rem;
+    padding:6px 14px; border-radius:999px;
+    transition:.2s;
+  }
+  .nav-links a:hover{ background:var(--pink-soft); color:var(--ink); }
+
+  /* ---------- HERO ---------- */
+  .hero{ text-align:center; padding:80px 0 60px; }
+  .hero-badge{
+    display:inline-block; background:var(--white); color:var(--purple);
+    font-family:var(--f-script); font-weight:600; padding:8px 22px; border-radius:999px;
+    box-shadow:var(--shadow-sm); margin-bottom:22px; font-size:1rem;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 7vw, 4.6rem);
+    margin:0 0 6px;
+    background:linear-gradient(120deg, var(--pink), var(--purple), var(--sky));
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    line-height:1.05;
+  }
+  .hero .kr{ font-family:var(--f-script); font-weight:700; color:var(--purple); font-size:clamp(1.3rem,4vw,2rem); margin:0 0 18px; }
+  .hero p.lead{ font-size:1.2rem; max-width:640px; margin:0 auto 30px; color:var(--ink); }
+  .btn-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn{
+    text-decoration:none; font-weight:700; font-family:var(--f-body);
+    padding:14px 30px; border-radius:999px; font-size:1.05rem;
+    transition:transform .15s, box-shadow .15s; display:inline-block;
+  }
+  .btn:hover{ transform:translateY(-3px) scale(1.03); }
+  .btn-pink{ background:var(--pink); color:var(--white); box-shadow:var(--shadow); }
+  .btn-purple{ background:var(--white); color:var(--purple); box-shadow:var(--shadow-sm); border:2px solid var(--purple-soft); }
+
+  /* ---------- CARD base ---------- */
+  .card{
+    background:var(--white); border-radius:26px; box-shadow:var(--shadow-sm);
+    border:3px solid var(--white); transition:transform .2s, box-shadow .2s;
+  }
+  .card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
+
+  /* ---------- JOIN / INFO ---------- */
+  .info-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
+  .info-card{ padding:30px 26px; text-align:center; }
+  .info-card .ico{ font-size:2.6rem; display:block; margin-bottom:10px; }
+  .info-card h3{ margin:0 0 6px; color:var(--purple); font-size:1.25rem; }
+  .info-card p{ margin:0; color:var(--ink-soft); }
+
+  /* ---------- FEATURE EVENT ---------- */
+  .feature{
+    background:linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+    border-radius:34px; color:var(--white); text-align:center;
+    padding:48px 28px; box-shadow:var(--shadow); position:relative; overflow:hidden;
+  }
+  .feature::before,.feature::after{
+    content:'★'; position:absolute; font-size:6rem; opacity:.15;
+  }
+  .feature::before{ top:-10px; left:20px; }
+  .feature::after{ bottom:-20px; right:24px; }
+  .feature .tag{ display:inline-block; background:rgba(255,255,255,.25); padding:6px 20px; border-radius:999px; font-family:var(--f-script); font-weight:600; font-size:1.15rem; margin-bottom:14px; letter-spacing:1px; }
+  .feature h2{ font-size:clamp(2rem,6vw,3.4rem); margin:0 0 8px; color:var(--white); text-shadow:2px 2px 0 rgba(0,0,0,.08); }
+  .feature .when{ font-size:1.4rem; font-weight:700; margin:0 0 4px; }
+  .feature .where{ font-size:1.1rem; opacity:.95; }
+  .feature .where .city{ font-family:var(--f-display); }
+
+  /* ---------- SCHEDULE / TIMELINE ---------- */
+  .year-head{
+    text-align:center; font-family:var(--f-display); color:var(--purple);
+    font-size:1.6rem; margin:40px 0 24px;
+  }
+  .year-head span{ background:var(--white); border:2px solid var(--pink-soft); padding:4px 22px; border-radius:999px; color:var(--ink); box-shadow:var(--shadow-sm); }
+
+  .timeline{ position:relative; max-width:760px; margin:0 auto; padding-left:34px; }
+  .timeline::before{
+    content:''; position:absolute; left:10px; top:6px; bottom:6px; width:4px;
+    background:repeating-linear-gradient(var(--pink) 0 8px, transparent 8px 16px);
+    border-radius:4px;
+  }
+  .tl-item{ position:relative; margin-bottom:16px; }
+  .tl-item::before{
+    content:''; position:absolute; left:-30px; top:16px; width:14px; height:14px;
+    background:var(--pink); border:3px solid var(--white); border-radius:50%;
+    box-shadow:0 0 0 3px var(--pink-soft);
+  }
+  .tl-item.star::before{ content:'★'; background:none; box-shadow:none; border:none; color:var(--yellow); font-size:1.4rem; left:-34px; top:12px; width:auto; height:auto; }
+  .tl-card{ background:var(--white); border-radius:18px; padding:14px 20px; box-shadow:var(--shadow-sm); }
+  .tl-card.highlight{ background:linear-gradient(120deg,var(--purple-soft),var(--pink-soft)); }
+  .tl-date{ font-weight:700; color:var(--purple); font-size:.95rem; }
+  .tl-title{ font-family:var(--f-display); font-size:1.1rem; margin:2px 0 0; }
+  .tl-note{ font-family:var(--f-script); color:var(--purple); font-size:1rem; }
+  .practice-tag{ display:inline-block; font-size:.78rem; background:var(--sky-soft); color:var(--ink); padding:2px 10px; border-radius:999px; margin:4px 4px 0 0; font-weight:600; }
+
+  details.practice{ margin-top:8px; }
+  details.practice summary{ cursor:pointer; color:var(--purple); font-weight:700; font-size:.9rem; list-style:none; }
+  details.practice summary::-webkit-details-marker{ display:none; }
+  details.practice summary::before{ content:'💃 '; }
+
+  /* ---------- GALLERY ---------- */
+  .gallery{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px; }
+  .g-card{ overflow:hidden; }
+  .g-photo{
+    aspect-ratio:4/3; width:100%;
+    background:linear-gradient(135deg,var(--pink-soft),var(--purple-soft));
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    color:var(--ink-soft); text-align:center; padding:14px; gap:6px;
+  }
+  .g-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .g-photo .ph-emoji{ font-size:2.4rem; }
+  .g-photo .ph-text{ font-size:.85rem; font-weight:600; }
+  .g-body{ padding:16px 20px 20px; }
+  .g-body h3{ margin:0 0 4px; font-size:1.15rem; color:var(--purple); }
+  .g-date{ font-weight:700; color:var(--pink); font-size:.85rem; }
+  .g-body p{ margin:8px 0 0; font-size:.9rem; color:var(--ink-soft); }
+  .credit{ font-size:.8rem; color:var(--ink-soft); font-style:italic; margin-top:8px; display:block; }
+
+  /* ---------- TEAM ---------- */
+  .advisor-card{ max-width:420px; margin:0 auto 40px; text-align:center; padding:26px; }
+  .advisor-card .ico{ font-size:2.6rem; }
+  .advisor-card h3{ margin:8px 0 2px; color:var(--purple); font-size:1.3rem; }
+  .advisor-card .role{ color:var(--pink); font-weight:700; }
+
+  .team-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:26px; }
+  .member{ padding:0 0 24px; overflow:hidden; text-align:center; }
+  .m-body{ padding:28px 24px 0; }
+  .m-body h3{ margin:0; font-size:1.3rem; color:var(--purple); }
+  .m-role{ display:inline-block; background:var(--pink-soft); color:var(--ink); font-weight:700; font-size:.82rem; padding:4px 14px; border-radius:999px; margin:8px 0 6px; }
+  .m-grade{ font-family:var(--f-script); color:var(--purple); font-size:1rem; margin:0 0 12px; }
+
+  /* ---------- SOCIAL ---------- */
+  .social{ text-align:center; }
+  .social-row{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+  .social-btn{
+    display:flex; align-items:center; gap:10px; text-decoration:none;
+    background:var(--white); color:var(--ink); font-weight:700;
+    padding:16px 28px; border-radius:999px; box-shadow:var(--shadow-sm);
+    transition:transform .15s, box-shadow .15s; font-size:1.05rem;
+  }
+  .social-btn:hover{ transform:translateY(-4px) scale(1.03); box-shadow:var(--shadow); }
+  .social-btn .ico{ font-size:1.6rem; }
+  .social-btn.yt{ border:2px solid var(--pink-soft); }
+  .social-btn.ig{ border:2px solid var(--purple-soft); }
+  .social-btn.kpop{ background:linear-gradient(120deg,var(--pink),var(--purple)); color:var(--white); }
+
+  /* ---------- FOOTER ---------- */
+  footer{ text-align:center; padding:50px 22px 40px; color:var(--ink-soft); }
+  footer .hearts{ font-size:1.6rem; margin-bottom:8px; }
+  footer a{ color:var(--purple); font-weight:700; text-decoration:none; }
+
+  @media (max-width:520px){
+    .nav-links{ display:none; }
+    section{ padding:50px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav>
+  <div class="nav-inner">
+    <div class="brand">🇰🇷 TKA KCC</div>
+    <div class="nav-links">
+      <a href="#join">Join Us</a>
+      <a href="#event">Dance Night</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#gallery">Events</a>
+      <a href="#team">Our Team</a>
+      <a href="#social">Follow</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero wrap">
+  <span class="floaty" style="top:40px; left:6%;">❤️</span>
+  <span class="floaty" style="top:120px; right:8%; animation-delay:1.5s;">💙</span>
+  <span class="floaty" style="top:260px; left:12%; animation-delay:3s;">✨</span>
+  <span class="floaty" style="top:220px; right:14%; animation-delay:2s;">🤍</span>
+
+  <div class="hero-badge">🇰🇷 The Kings Academy · Korean Culture Club</div>
+  <h1>Korean Culture Club</h1>
+  <p class="kr">KPOP ♡</p>
+  <p class="lead">A super sweet space for <strong>middle &amp; high school</strong> students who love Korean culture &amp; K-pop! Come dance, craft, snack, and make friends&nbsp;💕</p>
+  <div class="btn-row">
+    <a href="#join" class="btn btn-pink">Come Join Us! ♡</a>
+    <a href="#event" class="btn btn-purple">✦ K-Pop Dance Night</a>
+  </div>
+</header>
+
+<!-- ===================== JOIN / INFO ===================== -->
+<section id="join">
+  <div class="wrap">
+    <h2 class="section-title">Come Hang Out With Us! ♡</h2>
+    <p class="section-sub">No experience needed — just bring your love for Korean culture &amp; K-pop. Everyone is welcome!</p>
+    <div class="info-grid">
+      <div class="card info-card">
+        <span class="ico">📅</span>
+        <h3>Every Friday</h3>
+        <p>Weekly club meetings — games, culture, crafts &amp; dance!</p>
+      </div>
+      <div class="card info-card">
+        <span class="ico">💃</span>
+        <h3>M2 · Dance Room</h3>
+        <p>Find us in M2, the Dance Room, right after school.</p>
+      </div>
+      <div class="card info-card">
+        <span class="ico">🎓</span>
+        <h3>Middle + High</h3>
+        <p>Open to all middle &amp; high schoolers who want to learn more!</p>
+      </div>
+      <div class="card info-card">
+        <span class="ico">🍙</span>
+        <h3>K-pop &amp; Culture</h3>
+        <p>Dance covers, traditional games, food, crafts &amp; so much more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURE EVENT ===================== -->
+<section id="event">
+  <div class="wrap">
+    <div class="feature">
+      <span class="tag">☆ Sunnyvale ☆</span>
+      <h2>K-Pop Dance Night</h2>
+      <p class="when">🗓️ October 2, 2026 · 7:00 – 8:30 PM</p>
+      <p class="where">📍 Peterson Middle School</p>
+      <div class="btn-row" style="margin-top:26px;">
+        <a href="https://forms.gle/5NQhJx3B57qQXGkY9" target="_blank" rel="noopener" class="btn" style="background:var(--white); color:var(--pink);">✎ Sign Up Here!</a>
+        <a href="https://dayeonlim.github.io/KPOP/" target="_blank" rel="noopener" class="btn" style="background:rgba(255,255,255,.22); color:var(--white); border:2px solid rgba(255,255,255,.5);">💜 Event Info</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SCHEDULE ===================== -->
+<section id="schedule">
+  <div class="wrap">
+    <h2 class="section-title">Club Log 📖 ♡</h2>
+    <p class="section-sub">A little log of everything we've done together — plus a peek at what's coming up! ★ marks our big performances &amp; special events.</p>
+
+    <!-- 2026-2027 upcoming -->
+    <div class="year-head"><span>✿ 2026 – 2027 · Coming Up! ✿</span></div>
+    <div class="timeline">
+      <div class="tl-item star">
+        <div class="tl-card highlight">
+          <span class="tl-date">Nov 17, 2026</span>
+          <p class="tl-title">★ Rally Performance</p>
+          <p class="tl-note">"Deja Vu" by TXT · cover coming soon! 💫</p>
+          <span class="credit" style="display:block; margin-top:6px;">💃 By Abigail, Dayeon, Giovann, Henry &amp; Zachary</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2025-2026 (past) -->
+    <div class="year-head"><span>✿ 2025 – 2026 · Past ✿</span></div>
+    <div class="timeline">
+
+      <div class="tl-item star">
+        <div class="tl-card highlight">
+          <span class="tl-date">Feb 15, 2026</span>
+          <p class="tl-title">★ Performance @ Westgate Center</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-card">
+          <span class="tl-date">Jan – Feb 2026</span>
+          <p class="tl-title">"Famous / Fashion" Dance Practices (Festival)</p>
+          <details class="practice">
+            <summary>See all practice dates</summary>
+            <div>
+              <span class="practice-tag">01/09</span><span class="practice-tag">01/12</span><span class="practice-tag">01/23</span>
+              <span class="practice-tag">02/06</span><span class="practice-tag">02/09</span><span class="practice-tag">02/11</span>
+              <span class="practice-tag">02/12</span><span class="practice-tag">02/14</span>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-card">
+          <span class="tl-date">Jan 16, 2026</span>
+          <p class="tl-title">Culture 🇰🇷</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-card">
+          <span class="tl-date">Dec 12, 2025</span>
+          <p class="tl-title">🎄 Christmas Party</p>
+          <p class="tl-note">with the Vietnamese Club!</p>
+        </div>
+      </div>
+
+      <div class="tl-item star">
+        <div class="tl-card highlight">
+          <span class="tl-date">Nov 18, 2025</span>
+          <p class="tl-title">★ "Famous" Performance @ Rally</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-card">
+          <span class="tl-date">Sep – Nov 2025</span>
+          <p class="tl-title">"Famous" Dance Practices (Rally)</p>
+          <details class="practice">
+            <summary>See all practice dates</summary>
+            <div>
+              <span class="practice-tag">09/12</span><span class="practice-tag">09/19</span><span class="practice-tag">09/26</span><span class="practice-tag">09/30</span>
+              <span class="practice-tag">10/06</span><span class="practice-tag">10/10</span><span class="practice-tag">10/17</span><span class="practice-tag">10/21</span>
+              <span class="practice-tag">10/24</span><span class="practice-tag">10/27</span><span class="practice-tag">10/31</span><span class="practice-tag">11/04</span>
+              <span class="practice-tag">11/07</span><span class="practice-tag">11/10</span><span class="practice-tag">11/11</span><span class="practice-tag">11/14</span>
+              <span class="practice-tag">11/17</span>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-card">
+          <span class="tl-date">Oct 28, 2025</span>
+          <p class="tl-title">Culture 🇰🇷</p>
+        </div>
+      </div>
+
+      <div class="tl-item star">
+        <div class="tl-card highlight">
+          <span class="tl-date">Oct 17, 2025</span>
+          <p class="tl-title">🎪 Carnival</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-card">
+          <span class="tl-date">Sep 23, 2025</span>
+          <p class="tl-title">Orientation 🎉</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2024-2025 (past) -->
+    <div class="year-head"><span>✿ 2024 – 2025 · Past ✿</span></div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-card"><span class="tl-date">Apr 24, 2025</span><p class="tl-title">🍕 Pizza Party!</p></div></div>
+      <div class="tl-item star"><div class="tl-card highlight"><span class="tl-date">Apr 24, 2025</span><p class="tl-title">★ "ETA" Performance @ Rally</p></div></div>
+      <div class="tl-item">
+        <div class="tl-card">
+          <span class="tl-date">Mar – Apr 2025</span>
+          <p class="tl-title">"ETA" Dance Practices</p>
+          <details class="practice">
+            <summary>See all practice dates</summary>
+            <div>
+              <span class="practice-tag">03/17</span><span class="practice-tag">03/18</span><span class="practice-tag">03/20</span>
+              <span class="practice-tag">04/11</span><span class="practice-tag">04/14</span><span class="practice-tag">04/15</span>
+              <span class="practice-tag">04/16</span><span class="practice-tag">04/21</span><span class="practice-tag">04/22</span>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="tl-item"><div class="tl-card"><span class="tl-date">Feb 28, 2025</span><p class="tl-title">Culture</p><p class="tl-note">Squid Game 2 🦑</p></div></div>
+      <div class="tl-item star"><div class="tl-card highlight"><span class="tl-date">Jan 22, 2025</span><p class="tl-title">🎏 Multicultural Booth</p></div></div>
+      <div class="tl-item"><div class="tl-card"><span class="tl-date">Dec 6, 2024</span><p class="tl-title">Culture</p><p class="tl-note">Buldak! 🔥🍜</p></div></div>
+      <div class="tl-item"><div class="tl-card"><span class="tl-date">Nov 1 &amp; 8, 2024</span><p class="tl-title">K-pop / Crafts</p><p class="tl-note">Photocard decorating 💌</p></div></div>
+      <div class="tl-item"><div class="tl-card"><span class="tl-date">Oct 25, 2024</span><p class="tl-title">Dance</p><p class="tl-note">ENHYPEN – XO 💫</p></div></div>
+      <div class="tl-item star"><div class="tl-card highlight"><span class="tl-date">Oct 18, 2024</span><p class="tl-title">🎪 Carnival</p></div></div>
+      <div class="tl-item"><div class="tl-card"><span class="tl-date">Oct 11 &amp; 18, 2024</span><p class="tl-title">Dance</p><p class="tl-note">ENHYPEN – XO 💫</p></div></div>
+      <div class="tl-item"><div class="tl-card"><span class="tl-date">Oct 4, 2024</span><p class="tl-title">Culture</p><p class="tl-note">Squid Game 🦑</p></div></div>
+      <div class="tl-item"><div class="tl-card"><span class="tl-date">Sep 20, 2024</span><p class="tl-title">Orientation 🎉</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section id="gallery">
+  <div class="wrap">
+    <span class="floaty" style="top:30px; right:6%;">📸</span>
+    <h2 class="section-title">Events &amp; Memories ♡</h2>
+    <p class="section-sub">A look back at all the fun we've had together! 💕</p>
+
+    <div class="gallery">
+
+      <div class="card g-card">
+        <div class="g-photo">
+          <!-- To add a photo: replace this block with <img src="images/westgate-2026.jpg" alt="..."> -->
+          <span class="ph-emoji">👗</span>
+          <span class="ph-text">Add photo → images/westgate-2026.jpg</span>
+        </div>
+        <div class="g-body">
+          <span class="g-date">Feb 15, 2026</span>
+          <h3>Fashion + "Famous" @ Westgate Center</h3>
+          <span class="credit">📷 Covered by Dayeon Lim (11), Erin Sonu (12), Zachary Kwak (11), Henry Lo (11), Alyssa Chia (12)</span>
+        </div>
+      </div>
+
+      <div class="card g-card">
+        <div class="g-photo">
+          <span class="ph-emoji">🎏</span>
+          <span class="ph-text">Add photo → images/booth-2026.jpg</span>
+        </div>
+        <div class="g-body">
+          <span class="g-date">Jan 21, 2026</span>
+          <h3>Multicultural Booth Faire</h3>
+          <p>Thank you so much to all the parents and students who helped make our multicultural booth such a success! 🇰🇷</p>
+        </div>
+      </div>
+
+      <div class="card g-card">
+        <div class="g-photo">
+          <span class="ph-emoji">💃</span>
+          <span class="ph-text">Add photo → images/rally-2025.jpg</span>
+        </div>
+        <div class="g-body">
+          <span class="g-date">Nov 18, 2025</span>
+          <h3>"Famous" Performance @ Rally</h3>
+          <span class="credit">📷 Covered by Dayeon Lim (11), Henry Lo (11), Erin Sonu (12), Alyssa Chia (12), Zachary Kwak (11)</span>
+        </div>
+      </div>
+
+      <div class="card g-card">
+        <div class="g-photo">
+          <span class="ph-emoji">🕺</span>
+          <span class="ph-text">Add photo → images/eta-rally-2025.jpg</span>
+        </div>
+        <div class="g-body">
+          <span class="g-date">Apr 24, 2025</span>
+          <h3>ETA Performance @ Rally</h3>
+          <span class="credit">📷 Covered by Katelyn Fan, Cecilia Zhou, Dayeon Lim, Henry Lo, Rachel Tse, Iris Hong, Zachary Kwak, Erin Sonu, Rebecca Zhang, Rita Zheng</span>
+        </div>
+      </div>
+
+      <div class="card g-card">
+        <div class="g-photo">
+          <span class="ph-emoji">🍡</span>
+          <span class="ph-text">Add photo → images/booth-2025.jpg</span>
+        </div>
+        <div class="g-body">
+          <span class="g-date">Jan 22, 2025</span>
+          <h3>Multicultural Booth</h3>
+          <p>We made Tteokkochi (떡꼬치)! 😋</p>
+        </div>
+      </div>
+
+      <div class="card g-card">
+        <div class="g-photo">
+          <span class="ph-emoji">🎯</span>
+          <span class="ph-text">Add photo → images/carnival-2024.jpg</span>
+        </div>
+        <div class="g-body">
+          <span class="g-date">Oct 10, 2024</span>
+          <h3>Carnival</h3>
+          <p>Dart game &amp; yummy snacks! 🍿</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== TEAM ===================== -->
+<section id="team">
+  <div class="wrap">
+    <span class="floaty" style="top:30px; left:6%;">💗</span>
+    <h2 class="section-title">Meet Our Team ♡</h2>
+    <p class="section-sub">The lovely people who make KCC happen! 💕</p>
+
+    <!-- Advisor -->
+    <div class="card advisor-card">
+      <span class="ico">🌸</span>
+      <h3>Mrs. Reed &amp; Ms. Hardy</h3>
+      <span class="role">Club Advisors</span>
+    </div>
+
+    <!-- Group photo placeholder -->
+    <div class="card g-card" style="max-width:640px; margin:0 auto 40px;">
+      <div class="g-photo" style="aspect-ratio:16/7;">
+        <span class="ph-emoji">📷</span>
+        <span class="ph-text">Add board members group photo → images/board.jpg</span>
+      </div>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="card member">
+        <div class="m-body">
+          <h3>Dayeon Lim</h3>
+          <span class="m-role">Co-founder &amp; Director</span>
+          <p class="m-grade">🎓 Senior</p>
+        </div>
+      </div>
+
+      <div class="card member">
+        <div class="m-body">
+          <h3>Iris Hong</h3>
+          <span class="m-role">Co-founder &amp; Treasurer</span>
+          <p class="m-grade">🎓 Senior</p>
+        </div>
+      </div>
+
+      <div class="card member">
+        <div class="m-body">
+          <h3>Sally Lee</h3>
+          <span class="m-role">Public Relations</span>
+          <p class="m-grade">🎓 Senior</p>
+        </div>
+      </div>
+
+      <div class="card member">
+        <div class="m-body">
+          <h3>Valerie Loo</h3>
+          <span class="m-role">Officer</span>
+          <p class="m-grade">🎓 Senior</p>
+        </div>
+      </div>
+
+      <div class="card member">
+        <div class="m-body">
+          <h3>Audrey Wang</h3>
+          <span class="m-role">Officer</span>
+          <p class="m-grade">🎓 Senior</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOCIAL ===================== -->
+<section id="social">
+  <div class="wrap social">
+    <h2 class="section-title">Follow Us! ♡</h2>
+    <p class="section-sub">Visit our social media for updates &amp; dance vids! ✨</p>
+    <div class="social-row">
+      <a class="social-btn yt" href="https://www.youtube.com/@tka_kcc" target="_blank" rel="noopener">
+        <span class="ico">▶️</span> YouTube <span style="color:var(--ink-soft);font-weight:600;">@tka_kcc</span>
+      </a>
+      <a class="social-btn ig" href="https://www.instagram.com/tka.kcc" target="_blank" rel="noopener">
+        <span class="ico">📸</span> Instagram <span style="color:var(--ink-soft);font-weight:600;">@tka.kcc</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="hearts">❤️ 💙 🤍 🖤 ✨</div>
+  <p><strong>The Kings Academy · Korean Culture (KPOP) Club</strong></p>
+  <p>Every Friday · M2 Dance Room · Middle &amp; High School</p>
+  <p style="margin-top:14px; font-family:var(--f-script); font-size:1.15rem; color:var(--purple);">Made with love for everyone who loves Korean culture &amp; K-pop 💕</p>
+</footer>
+
+</body>
+</html>
