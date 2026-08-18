@@ -215,21 +215,21 @@
   .advisor-card .role{ color:var(--pink); font-weight:700; }
 
   .team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 280px);
+  display: flex;
+  flex-direction: column;
   gap: 26px;
-  justify-content: center;
   }
   
-  .team-grid .team-card:nth-child(1) { grid-column: 2; }
-  .team-grid .team-card:nth-child(2) { grid-column: 3; }
+  .team-row {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    flex-wrap: wrap; /* lets it wrap on small screens instead of squishing */
+  }
   
-  .team-grid .team-card:nth-child(3) { grid-column: 1; }
-  .team-grid .team-card:nth-child(4) { grid-column: 2; }
-  .team-grid .team-card:nth-child(5) { grid-column: 3; }
-  
-  .team-grid .team-card:nth-child(6) { grid-column: 2; }
-  .team-grid .team-card:nth-child(7) { grid-column: 3; }
+  .team-row > * {
+    flex: 0 1 280px;
+  }
     
   .member{ padding:0; overflow:hidden; text-align:center; display:flex; flex-direction:column; min-height:100px; }
   .member .m-body{ padding:28px 24px; flex:1; display:flex; flex-direction:column; justify-content:center; }
@@ -625,6 +625,24 @@
     </div>
 
     <div class="team-grid">
+
+    <div class="team-row">
+      <!-- your 1st team member card here -->
+      <!-- your 2nd team member card here -->
+    </div>
+  
+    <div class="team-row">
+      <!-- your 3rd team member card here -->
+      <!-- your 4th team member card here -->
+      <!-- your 5th team member card here -->
+    </div>
+  
+    <div class="team-row">
+      <!-- your 6th team member card here -->
+      <!-- your 7th team member card here -->
+    </div>
+  
+  </div>
       
       <div class="card member">
         <div class="m-body">
